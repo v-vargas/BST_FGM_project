@@ -4,10 +4,10 @@ library(ggplot2)
 library(tidyverse)
 
 #Importing ACS data 
-pob_acs <- read.csv("~/Desktop/BST_FGM_project/BST 260 Project Data.csv")
+pob_acs <- read.csv("BST 260 Project Data.csv")
 
 #Importing FGM Prev data 
-fgm_prev <- read_xlsx("~/Desktop/BST_FGM_project/FGM-prevalence.xlsx")
+fgm_prev <- read_xlsx("FGM-prevalence.xlsx")
 
 #Filtering data set down to countries that practice FGM 
 pob_fgm <- pob_acs %>% filter(Place.of.birth %in% c("Yemen",
