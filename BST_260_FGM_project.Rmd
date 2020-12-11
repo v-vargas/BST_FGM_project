@@ -1,6 +1,6 @@
 ---
 title: "US Estimates of the number of females who have experienced FGM"
-output: html
+output: html_document
 Names: Neena Kapoor & Valentina Vargas 
 TA: Jane 
 ---
