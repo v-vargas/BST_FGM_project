@@ -138,7 +138,7 @@ fgm_combined %>%
   ggtitle("Number of women living in the US by Country of Birth") 
 ```
 
-Here we graph the prevalence of FGM (%) in each country that practices FGM. We also created a world map to show FGM prevalence by country globally. 
+Here we graph the prevalence of FGM (%) in each country that practices FGM. We created a world map to show FGM prevalence by country globally. 
 
 ```{r}
 fgm_combined %>% 
