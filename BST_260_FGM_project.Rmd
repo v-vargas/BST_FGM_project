@@ -113,7 +113,7 @@ fgm_combined %>%
   ggtitle("Number of women living in the US by Country of Birth") 
 ```
 
-Here we graph the prevalence of FGM (%) in each country that practices FGM. 
+Here we graph the prevalence of FGM (%) in each country that practices FGM. We also created a world map to show FGM prevalence by country globally. 
 
 ```{r}
 fgm_combined %>% 
@@ -123,6 +123,27 @@ fgm_combined %>%
   ylab("Prevalence of FGM (%)") +
   theme(axis.text.x = element_text(size = 6.5, angle = 65, hjust=1))+
   ggtitle("Prevalence of FGM by Country") 
+
+#World Map 
+world_map = map_data("world")
+
+#Rename any countries to match 
+world_map$region <- str_replace_all(world_map$region, "Ivory Coast", "Côte d'Ivoire")
+
+world_map_fgm <- left_join(world_map,fgm_prev,by = c("region" = "Country"))
+
+
+ggplot(world_map_fgm, aes(x = long, y = lat, group = group)) +
+      geom_polygon(aes_string(fill="fgm_prevalence"), color = "white") + 
+     scale_fill_viridis_c(name = "FGM Prevalence")+
+      theme(panel.grid.major = element_blank(), 
+            panel.background = element_blank(),
+            axis.title = element_blank(), 
+            axis.text = element_blank(),
+            axis.ticks = element_blank())
+
+
+
 ```
 
 Here we graph the estimates of women living in the US who have experienced FGM by their country of birth.
