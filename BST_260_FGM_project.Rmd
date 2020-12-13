@@ -19,15 +19,15 @@ The article with outdated estimates [here](https://www.ncbi.nlm.nih.gov/pmc/arti
 
 Our primary interest was to update the estimates of FGM prevalence in the United States using the methods described in the study above. We were also interested in looking at the estimates by state and county, but later learned these data are not available after contacting the US Census Dissemination and Outreach Branch. Thus, we decided to calculate an estimate FGM prevalence based on data available on the national level.
 
-Additionally, the methods that we planned to replicate included both women born in countries that practice FGM and their daughters. We were not able to find a usable data on these women's daughters and believe that the methods used in the paper might be incorrect. We settled on doing a more conservative and valid estimate of FGM by just including women born in the countries that practice FGM, and excluding daughters. We were able to find a variable in the ACS dataset that was "presence of daughter in the household", but does not specify the number of daughters. We believe this is the indicator the authors may have used that could have resulted in an incorrect estimate and have contacted the authors for furhter clarification. 
+Additionally, the methods that we planned to replicate included both females born in countries that practice FGM and their daughters. We were not able to find a usable data on these female's daughters and believe that the methods used in the paper might be incorrect. We settled on doing a more conservative and valid estimate of FGM by just including females born in the countries that practice FGM, and excluding daughters. We were able to find a variable in the ACS dataset that was "presence of daughter in the household", but does not specify the number of daughters. We believe this is the indicator the authors may have used that could have resulted in an incorrect estimate and have contacted the authors for further clarification.  
 
 ### Data Sources:
 
-The data for the number of women who have migrated to the US from countries that practice FGM is from the American Community Survey (ACS), a survey conducted by the US census. From this data source, we extracted estimates of the place of birth of men and women in the United States. The place of birth includes both US states and countries outside of the US. ACS provides yearly estimates, but we chose a 5-year estimate from 2018 because these data have the largest sample size and the data is collected for all areas in the US, despite population size. Thus, we thought these data would give us the most accurate estimates of US women's place of birth. The ACS data is not a census of all people across the US, but is instead a random sample from which an estimate is calculated.  
+The data for the number of females who have migrated to the US from countries that practice FGM is from the American Community Survey (ACS), a survey conducted by the US census. From this data source, we extracted estimates of the place of birth of males and females in the United States. The place of birth includes both US states and countries outside of the US. ACS provides yearly estimates, but we chose a 5-year estimate from 2018 because these data have the largest sample size and the data is collected for all areas in the US, despite population size. Thus, we thought these data would give us the most accurate estimates of US female's place of birth. The ACS data is not a census of all people across the US, but is instead a random sample from which an estimate is calculated.  
 
-We obtained data on FGM prevalence in country from UNICEF. They used data sources such as DHS, MICS, EDSF, which are large-scale population based global surveys. The dates for these population surveys range from 2004 to 2018. These are the most validated and updated estimates of FGM for women ages 15-49 available. This dataset includes 30 countries where FGM is practiced. 
+We obtained data on FGM prevalence in country from UNICEF. They used data sources such as DHS, MICS, EDSF, which are large-scale population based global surveys. The dates for these population surveys range from 2004 to 2018. These are the most validated and updated estimates of FGM for females ages 15-49 available. This dataset includes 30 countries where FGM is practiced. 
 
-We renamed variables and names of countries to ensure the data matched, as needed, for merging. The ACS dataset was then filtered to only include countries where FGM is practiced according to our UNICEF data source. Data were merged based on country where FGM is practiced and country where women were born from filtered ACS dataset. We eliminated males from our dataset as well, as this is not a population of interest. 
+We renamed variables and names of countries to ensure the data matched, as needed, for merging. The ACS dataset was then filtered to only include countries where FGM is practiced according to our UNICEF data source. Data were merged based on country where FGM is practiced and country where females were born from filtered ACS dataset. We eliminated males from our dataset as well, as this is not a population of interest. 
 
 ### Exploratory analysis:
 
@@ -37,7 +37,7 @@ We also create a world map of FGM prevalence to visualize the prevalence of FGM 
 
 ### Final analysis:
 
-To obtain the estimate the number of women living in the US who had experienced FGM, we created a new variable that was the multiplication of the country FGM estimate and the number of women born in that country, currently living in the US. When doing our analysis using the first method described, we calculated a prevalence of 370,055. The paper mentioned previously found an estimate of 545,000. It makes sense that our estimate is less than the estimate in the paper as we did not include daughters at risk in our estimate due to data constraints and concerns regarding assumptions the authors made. 
+To obtain the estimate the number of females living in the US who had experienced FGM, we created a new variable that was the multiplication of the country FGM estimate and the number of females born in that country, currently living in the US. When doing our analysis using the first method described, we calculated a prevalence of 370,055. The paper mentioned previously found an estimate of 545,000. It makes sense that our estimate is less than the estimate in the paper as we did not include daughters at risk in our estimate due to data constraints and concerns regarding assumptions the authors made. 
 
 ### Major takeaways
 Due to data constraints, we were only able to calculate a much more conservative estimate of FGM prevalence in the United States. We learned a lot about the assumptions researchers make when calculating these estimates and seriously question many of these assumptions, as these estimates may be used for future research or interventions. We also learned about the importance of writing clear methods so that they are easily reproducible. 
@@ -58,7 +58,7 @@ library(tidyverse)
 library(maps)
 ```
 
-Import the ACS data. These data are from American Community Survey (ACS), a survey conducted by the US census. From this data source, we extracted estimates of the place of birth of men and women in the United States. The place of birth includes both US states and countries outside of the US. ACS provides yearly estimates, but we chose a 5-year estimate from 2018 because these data have the largest sample size and the data is collected for all areas in the US, despite population size. Thus, we thought these data would give us the most accurate estimates of US women's place of birth. 
+Import the ACS data. These data are from American Community Survey (ACS), a survey conducted by the US census. From this data source, we extracted estimates of the place of birth of males and females in the United States. The place of birth includes both US states and countries outside of the US. ACS provides yearly estimates, but we chose a 5-year estimate from 2018 because these data have the largest sample size and the data is collected for all areas in the US, despite population size. Thus, we thought these data would give us the most accurate estimates of US females' place of birth. 
 
 ```{r}
 #Importing ACS data 
@@ -72,7 +72,7 @@ Import data on FGM Prevalence. We obtained these data from UNICEF, who compiled 
 fgm_prev <- read_xlsx("FGM-prevalence.xlsx")
 ```
 
-Here we filter the ACS dataset to only include countries that practice FGM, according to the UNICEF dataset. Thus, we are left with a filtered dataset of ACS estimates of women in the US who were born in countries that practice FGM. 
+Here we filter the ACS dataset to only include countries that practice FGM, according to the UNICEF dataset. Thus, we are left with a filtered dataset of ACS estimates of females in the US who were born in countries that practice FGM. 
 
 ```{r}
 #Filtering data set down to countries that practice FGM 
@@ -136,7 +136,7 @@ pob_fgm$Country <- str_replace_all(pob_fgm$Country, "Ivory Coast \\(2017 or late
 fgm_prev$Country <- str_replace_all(fgm_prev$Country, "United Republic of Tanzania", "Tanzania")
 ```
 
-We joined the datasets into one final dataset for analysis. This final dataset has the number of women in the US who were born in countries that practice FGM, as well as the prevalence of FGM in that country. 
+We joined the datasets into one final dataset for analysis. This final dataset has the number of females in the US who were born in countries that practice FGM, as well as the prevalence of FGM in that country. 
 
 ```{r}
 #Join the dataset 
@@ -150,30 +150,30 @@ We removed the male and total column that are not needed for analysis.
 fgm_combined <- fgm_combined[-c(2,3)]
 ```
 
-To obtain the estimate the number of women living in the US who had experienced FGM, we created a new variable that was the multiplication of the country FGM estimate and the number of women born in that country, living in the US. 
+To obtain the estimate the number of females living in the US who had experienced FGM, we created a new variable that was the multiplication of the country FGM estimate and the number of females born in that country, living in the US. 
 ```{r}
-#Estimate the number of women who have experienced FGM in US 
+#Estimate the number of females who have experienced FGM in US 
 fgm_combined$fgm_estimate <- fgm_combined$Female*(fgm_combined$fgm_prevalence/100)
 ```
 
-We summarized (sum) the new variable calculated above to obtain the total number of women in the US who have experienced FGM. 
+We summarized (sum) the new variable calculated above to obtain the total number of females in the US who have experienced FGM. 
 
 ```{r}
-#Total number of women in the US who are have experienced FGM 
+#Total number of females in the US who are have experienced FGM 
 fgm_combined %>% summarise(sum(fgm_estimate))
 ```
 
 We decided to create a few plots to visualize our results. 
-Here we graph the number of women living in the US by their place of birth, only including countries that practice FGM. 
+Here we graph the number of females living in the US by their place of birth, only including countries that practice FGM. 
 
 ```{r}
 fgm_combined %>% 
   ggplot() +
   geom_bar(aes(x=Country, y = Female), stat = "identity", fill = "lightsteelblue") + 
   xlab("Country of Birth") + 
-  ylab("Number of Women") +
+  ylab("Number of Females") +
   theme(axis.text.x = element_text(size = 6.5, angle = 65, hjust=1))+
-  ggtitle("Number of women living in the US by Country of Birth") 
+  ggtitle("Number of females living in the US by Country of Birth") 
 ```
 
 Here we graph the prevalence of FGM (%) in each country that practices FGM. We created a world map to show FGM prevalence by country globally. 
@@ -192,16 +192,16 @@ fgm_combined %>%
 
 ```
 
-Here we graph the estimates of women living in the US who have experienced FGM by their country of birth.
+Here we graph the estimates of females living in the US who have experienced FGM by their country of birth.
 
 ```{r}
 fgm_combined %>% 
   ggplot() +
   geom_bar(aes(x=Country, y = fgm_estimate), stat = "identity", fill = "lightsteelblue") + 
   xlab("Country of Birth") + 
-  ylab("Number of Women") +
+  ylab("Number of Females") +
   theme(axis.text.x = element_text(size = 6.5, angle = 65, hjust=1))+
-  ggtitle("Estimate of women in US who have experienced FGM by Country of Birth") 
+  ggtitle("Estimate of females in US who have experienced FGM by Country of Birth") 
 
 ```
 
