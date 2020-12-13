@@ -368,7 +368,7 @@ summary {
 
 <div id="overview-motivation" class="section level3">
 <h3>Overview &amp; Motivation:</h3>
-<p>The Sustainable Development Goal (SDG) target 5.3 states that by 2030 they hope to eliminate all harmful practices, such as child, early and forced marriage, and female genital mutilation (WHO). It is estimated that 200 million girls in the world today have experienced female genital mutilation (FGM) (UNFPA). FGM is defined as all procedures that intentionally alter or cause injury to the female genital organs for non-medical reasons (WHO). The practice of FGM is a violation of human rights. Perpetuated by gender inequalities, FGM is harmful to the physical, emotional, and psychological health of girls and women.</p>
+<p>The Sustainable Development Goal (SDG) target 5.3 states that by 2030 all harmful practices, such as child, early and forced marriage, and female genital mutilation should be eliminated (WHO). It is estimated that 200 million girls in the world today have experienced female genital mutilation (FGM) (UNFPA). FGM is defined as all procedures that intentionally alter or cause injury to the female genital organs for non-medical reasons (WHO). The practice of FGM is a violation of human rights. Perpetuated by gender inequalities, FGM is harmful to the physical, emotional, and psychological health of girls and women.</p>
 <p>FGM is commonly practiced in Sub-Saharan Africa and parts of the Middle East and Southeast Asia, with Somalia having the highest prevalence of FGM victims at 98% (UNFPA, 2019). Although it is often confined to a few countries, migration flows have removed the boundaries of FGM presence and brought the practice and its effects around the world. In the United States, an estimated 513,000 women are either at risk or have been subjected to FGM (Goldberg et al., 2016). Although these estimates were published in 2016, the data used in the analysis is from 2012. Thus, we are interested in updating the estimates of FGM in the United States. We believe this is important to inform future FGM research or interventions based in the United States.</p>
 </div>
 <div id="related-work" class="section level3">
@@ -378,7 +378,7 @@ summary {
 <div id="initial-questions" class="section level3">
 <h3>Initial Questions:</h3>
 <p>Our primary interest was to update the estimates of FGM prevalence in the United States using the methods described in the study above. We were also interested in looking at the estimates by state and county, but later learned these data are not available after contacting the US Census Dissemination and Outreach Branch. Thus, we decided to calculate an estimate FGM prevalence based on data available on the national level.</p>
-<p>Additionally, the methods that we planned to replicate included both females born in countries that practice FGM and their daughters. We were not able to find a usable data on these female’s daughters and believe that the methods used in the paper might be incorrect. We settled on doing a more conservative and valid estimate of FGM by just including females born in the countries that practice FGM, and excluding daughters. We were able to find a variable in the ACS dataset that was “presence of daughter in the household”, but does not specify the number of daughters. We believe this is the indicator the authors may have used that could have resulted in an incorrect estimate and have contacted the authors for further clarification.</p>
+<p>Additionally, the methods that we planned to replicate included both females born in countries that practice FGM and their daughters. We were not able to find a usable data on these females’ daughters and believe that the methods used in the paper might be incorrect. We settled on doing a more conservative and valid estimate of FGM by just including females of all ages born in the countries that practice FGM, and excluding daughters that might be born in the US. We were able to find a variable in the ACS dataset that was “presence of daughter in the household”, but does not specify the number of daughters. We believe this is the indicator the authors may have used that could have resulted in an incorrect estimate and have contacted the authors for further clarification.</p>
 </div>
 <div id="data-sources" class="section level3">
 <h3>Data Sources:</h3>
@@ -388,12 +388,12 @@ summary {
 </div>
 <div id="exploratory-analysis" class="section level3">
 <h3>Exploratory analysis:</h3>
-<p>The research study we attempted to replicate used two methods to estimate the FGM prevalence in the US.The first method assumed that the country-specific FGM prevalence among women and girls aged 15–49 years applied to all women and girls, and only required data on country of birth for these women. The second method applied country-specific FGM prevalence among women and girls aged 15–19 years in the country to women and girls younger than 20 years of age in the US, and applied the prevalence among women and girls aged 15–49 years to women and girls aged 20 years or older in the ACS-2012. The UNICEF FGM prevalence, which is the most recent and updates prevalence estimates, only provided estimates for all women ages 15-49. Although we could only replicate the first method, we believe this still provides a valid and important update on FGM prevalence in the U.S. Furthermore, the previous study was only able to capture estimates from 17 of the 27 countries that practice FGM. We were able to capture estimates from 20 of the 30 (now updated) countries that practice FGM.</p>
-<p>We also create a world map of FGM prevalence to visualize the prevalence of FGM in countries where it is practiced. This map though does not represent migration patterns, which further emphasizes the necessity of our analysis.</p>
+<p>The research study we attempted to replicate used two methods to estimate the FGM prevalence in the US.The first method assumed that the country-specific FGM prevalence among women and girls aged 15–49 years applied to all women and girls, and only required data on country of birth for these women. The second method applied country-specific FGM prevalence among women and girls aged 15–19 years in the country to women and girls younger than 20 years of age in the US, and applied the prevalence among women and girls aged 15–49 years to women and girls aged 20 years or older in the ACS-2012. The UNICEF FGM prevalence, which is the most recent and updated prevalence estimates, only provided estimates for all women ages 15-49. Although we could only replicate the first method, we believe this still provides a valid and important update on FGM prevalence in the U.S. Furthermore, the previous study was only able to capture estimates from 17 of the 27 countries that practice FGM. We were able to capture estimates from 20 of the 30 (now updated) countries that practice FGM.</p>
+<p>We also created a world map of FGM prevalence to visualize the prevalence of FGM in countries where it is practiced. This map though does not represent migration patterns, which further emphasizes the necessity of our analysis.</p>
 </div>
 <div id="final-analysis" class="section level3">
 <h3>Final analysis:</h3>
-<p>To obtain the estimate the number of females living in the US who had experienced FGM, we created a new variable that was the multiplication of the country FGM estimate and the number of females born in that country, currently living in the US. When doing our analysis using the first method described, we calculated a prevalence of 370,055. The paper mentioned previously found an estimate of 545,000. It makes sense that our estimate is less than the estimate in the paper as we did not include daughters at risk in our estimate due to data constraints and concerns regarding assumptions the authors made.</p>
+<p>To obtain the estimate the number of females living in the US who have experienced FGM, we created a new variable that was the multiplication of the country FGM estimate and the number of females born in that country, currently living in the US. When doing our analysis using the first method described, we calculated a prevalence of 370,055. The paper mentioned previously found an estimate of 545,000. It makes sense that our estimate is less than the estimate in the paper as we did not include daughters at risk in our estimate due to data constraints and concerns regarding assumptions the authors made.</p>
 </div>
 <div id="major-takeaways" class="section level3">
 <h3>Major takeaways</h3>
@@ -411,11 +411,11 @@ library(dplyr)</code></pre>
 ##     intersect, setdiff, setequal, union</code></pre>
 <pre class="r"><code>library(ggplot2)
 library(tidyverse)</code></pre>
-<pre><code>## ── Attaching packages ──────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ── Attaching packages ──────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
 <pre><code>## ✓ tibble  3.0.3     ✓ purrr   0.3.4
 ## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
 ## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
-<pre><code>## ── Conflicts ─────────────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Conflicts ─────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
 <pre class="r"><code>library(maps)</code></pre>
