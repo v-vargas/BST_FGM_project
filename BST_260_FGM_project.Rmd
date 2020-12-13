@@ -13,11 +13,13 @@ FGM is commonly practiced in Sub-Saharan Africa and parts of the Middle East and
 
 ### Related work:
 
-The article with outdated estimates here (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4765983/).
+The article with outdated estimates [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4765983/).
 
 ### Initial Questions:
 
 Our primary interest was to update the estimates of FGM prevalence in the United States using the methods described in the study above. We were also interested in looking at the estimates by state and county, but later learned these data are not available after contacting the US Census Dissemination and Outreach Branch. Thus, we decided to calculate an estimate FGM prevalence based on data available on the national level.
+
+Additionally, the methods that we planned to replicate included both women born in countries that practice FGM and their daughters. We were not able to find a usable data on these women's daughters and believe that the methods used in the paper might be incorrect. We settled on doing a more conservative and valid estimate of FGM by just including women born in the countries that practice FGM, and excluding daughters. We were able to find a variable in the ACS dataset that was "presence of daughter in the household", but does not specify the number of daughters. We believe this is the indicator the authors may have used that could have resulted in an incorrect estimate and have contacted the authors for furhter clarification. 
 
 ### Data Sources:
 
@@ -29,13 +31,16 @@ We renamed variables and names of countries to ensure the data matched, as neede
 
 ### Exploratory analysis:
 
-The research study we attempted to replicate used two methods to estimate the FGM prevalence in the US.The first method assumed that the country-specific FGM prevalence among women and girls aged 15–49 years applied to all women and girl, and only required data on country of birth for these women. The second method applied country-specific FGM prevalence among women and girls aged 15–19 years in the country to women and girls younger than 20 years of age in the US, and applied the prevalence among women and girls aged 15–49 years to women and girls aged 20 years or older in the ACS-2012. The UNICEF FGM prevalence, which is the most recent and updates prevalence estimates, only provided estimates for all women ages 15-49. Although we could only replicate the first method, we believe this still provides a valid and important update on FGM prevalence in the U.S. Furthermore, the previous study was only able to capture estimates from 17 of the 27 countries that practice FGM. We were able to capture estimates from 20 of the 30 (now updated) countries that practice FGM. 
+The research study we attempted to replicate used two methods to estimate the FGM prevalence in the US.The first method assumed that the country-specific FGM prevalence among women and girls aged 15–49 years applied to all women and girls, and only required data on country of birth for these women. The second method applied country-specific FGM prevalence among women and girls aged 15–19 years in the country to women and girls younger than 20 years of age in the US, and applied the prevalence among women and girls aged 15–49 years to women and girls aged 20 years or older in the ACS-2012. The UNICEF FGM prevalence, which is the most recent and updates prevalence estimates, only provided estimates for all women ages 15-49. Although we could only replicate the first method, we believe this still provides a valid and important update on FGM prevalence in the U.S. Furthermore, the previous study was only able to capture estimates from 17 of the 27 countries that practice FGM. We were able to capture estimates from 20 of the 30 (now updated) countries that practice FGM. 
 
-We also create a world map of FGM prevalence to visualize the prevalence of FGM in countries where it is practiced. This map though does not represent migration patters, which further emphasizes the necessity of our analysis. 
+We also create a world map of FGM prevalence to visualize the prevalence of FGM in countries where it is practiced. This map though does not represent migration patterns, which further emphasizes the necessity of our analysis. 
 
 ### Final analysis:
 
-To obtain the estimate the number of women living in the US who had experienced FGM, we created a new variable that was the multiplication of the country FGM estimate and the number of women born in that country, currently living in the US. The paper mentioned previously found an estimate of 545,000. When doing our analysis using the first method, we calculated a prevalence of 370,055. Our estimate is smaller than the paper we have cited. This could be both because less women are migrating to the US from these countries and the prevalence of FGM in these countries are also decreasing. 
+To obtain the estimate the number of women living in the US who had experienced FGM, we created a new variable that was the multiplication of the country FGM estimate and the number of women born in that country, currently living in the US. When doing our analysis using the first method described, we calculated a prevalence of 370,055. The paper mentioned previously found an estimate of 545,000. It makes sense that our estimate is less than the estimate in the paper as we did not include daughters at risk in our estimate due to data constraints and concerns regarding assumptions the authors made. 
+
+### Major takeaways
+Due to data constraints, we were only able to calculate a much more conservative estimate of FGM prevalence in the United States. We learned a lot about the assumptions researchers make when calculating these estimates and seriously question many of these assumptions, as these estimates may be used for future research or interventions. We also learned about the importance of writing clear methods so that they are easily reproducible. 
 
 ---
 
